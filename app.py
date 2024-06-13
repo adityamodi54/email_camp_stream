@@ -1,17 +1,11 @@
 import streamlit as st
 import smtplib
-import imaplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from dotenv import load_dotenv
-import os
 
-# Load environment variables from .env file if it exists
-if os.path.exists('.env'):
-    load_dotenv()
-
-from_email = os.getenv("EMAIL")
-password = os.getenv("PASSWORD")
+# Load secrets from Streamlit's secrets management
+from_email = st.secrets["email"]["EMAIL"]
+password = st.secrets["email"]["PASSWORD"]
 
 if not from_email or not password:
     st.error("Please set EMAIL and PASSWORD environment variables")
