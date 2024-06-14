@@ -99,7 +99,7 @@ def format_timedelta(timedelta):
     return f"{hours} hours, {minutes} minutes, {seconds} seconds"
 
 def main():
-    st.title("Email Campaign App")
+    st.title("Adi's Email Campaign App")
 
     st.header("Send Emails")
     email_addresses = st.text_area("Enter email addresses (separated by commas)")
